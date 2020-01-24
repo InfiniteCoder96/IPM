@@ -43,6 +43,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" href="{{asset('bower_components/select2/dist/css/select2.min.css')}}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -68,6 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         .hide{
             display: none;
         }
+
         .select2-container--default .select2-selection--multiple .select2-selection__choice{
             outline-color: red;
             background-color: #007bff;
@@ -101,9 +105,9 @@ desired effect
 <div class="wrapper">
 
     <!-- Main Header -->
-@include('admin.includes.header')
+@include('delegator.includes.header')
 <!-- Left side column. contains the logo and sidebar -->
-@include('admin.includes.sidebar')
+@include('delegator.includes.sidebar')
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -121,7 +125,7 @@ desired effect
     <!-- /.content-wrapper -->
 
     <!-- Main Footer -->
-@include('admin.includes.footer')
+@include('delegator.includes.footer')
 
 <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">

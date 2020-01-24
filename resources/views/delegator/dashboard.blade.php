@@ -1,5 +1,5 @@
 <?php use Carbon\Carbon; ?>
-@extends('layouts.admin.app')
+@extends('layouts.delegator.app')
 
 
 @section('page-header')

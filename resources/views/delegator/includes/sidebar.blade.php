@@ -65,8 +65,8 @@
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('sales/create')}}"><i class="fa fa-circle-o"></i> Add New Company</a></li>
-                    <li><a href="{{url('sales')}}"><i class="fa fa-circle-o"></i> Company List</a></li>
+                    <li><a href="{{url('companies/create')}}"><i class="fa fa-circle-o"></i> Add New Company</a></li>
+                    <li><a href="{{url('companies')}}"><i class="fa fa-circle-o"></i> Company List</a></li>
 
                 </ul>
 
