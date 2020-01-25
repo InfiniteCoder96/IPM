@@ -59,6 +59,18 @@ class PolicyController extends Controller
             'price' => 'required',
         ]);
 
+        $company = new Policy();
+
+        $comp_name = $request->get('topic');
+        $comp_address = $request->get('content');
+
+        
+        $company['comp_name'] = $comp_name;
+        $company['comp_address'] = $comp_address;
+        $company['comp_logo'] = $logoName;
+
+        $company->save();
+
         Policy::create($request->all());
 
         return redirect()->route('policies.index')

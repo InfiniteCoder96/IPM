@@ -63,7 +63,8 @@
                                     <div class="form-group">
                                         <label>Policy Content</label>
                                         <textarea id="editor1" name="content" rows="10" cols="80">
-                                                                        This is my textarea to be replaced with CKEditor.</textarea>
+
+                                        </textarea>
 
                                         <span class="help-block hide">Help block with error</span>
                                     </div>
@@ -82,7 +83,7 @@
                                 <div class="col-xs-6 col-md-6">
                                     <div class="form-group">
                                         <label>Policy Add-Ons</label>
-                                        <select class="form-control select23"  multiple="multiple" data-placeholder="Select a State" id="addons" name="addons_id[]" style="width: 100%;" autocomplete="off">
+                                        <select class="form-control select23"  multiple="multiple" data-placeholder="Select a State" id="addons" name="addons_ids[]" style="width: 100%;" autocomplete="off">
 
                                         </select>
                                     </div>
