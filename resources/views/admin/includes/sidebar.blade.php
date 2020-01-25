@@ -44,8 +44,8 @@
               </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('sales/create')}}"><i class="fa fa-circle-o"></i> Add New Policy</a></li>
-                    <li><a href="{{url('sales')}}"><i class="fa fa-circle-o"></i> Policy List</a></li>
+                    <li><a href="{{url('policies/create')}}"><i class="fa fa-circle-o"></i> Add New Policy</a></li>
+                    <li><a href="{{url('policies')}}"><i class="fa fa-circle-o"></i> Policy List</a></li>
 
                 </ul>
             </li>
@@ -54,8 +54,8 @@
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('sales/create')}}"><i class="fa fa-circle-o"></i> Add New Feature</a></li>
-                    <li><a href="{{url('sales')}}"><i class="fa fa-circle-o"></i> Feature List</a></li>
+                    <li><a href="{{url('policy_addons/create')}}"><i class="fa fa-circle-o"></i> Add New Feature</a></li>
+                    <li><a href="{{url('policy_addons')}}"><i class="fa fa-circle-o"></i> Feature List</a></li>
 
                 </ul>
 
@@ -65,8 +65,8 @@
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('sales/create')}}"><i class="fa fa-circle-o"></i> Add New Company</a></li>
-                    <li><a href="{{url('sales')}}"><i class="fa fa-circle-o"></i> Company List</a></li>
+                    <li><a href="{{url('companies/create')}}"><i class="fa fa-circle-o"></i> Add New Company</a></li>
+                    <li><a href="{{url('companies')}}"><i class="fa fa-circle-o"></i> Company List</a></li>
 
                 </ul>
 

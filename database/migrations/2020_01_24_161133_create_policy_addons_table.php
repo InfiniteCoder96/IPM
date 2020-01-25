@@ -16,6 +16,7 @@ class CreatePolicyAddonsTable extends Migration
         Schema::create('policy_addons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->text('description');
             $table->string('price');
             $table->timestamps();
         });

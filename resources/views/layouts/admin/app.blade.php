@@ -249,6 +249,10 @@ desired effect
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
+<!-- CK Editor -->
+<script src="{{asset('bower_components/ckeditor/ckeditor.js')}}"></script>
+
+<script src="{{asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
 @yield('scripts')
 <script>
 

@@ -1,16 +1,16 @@
-@extends('layouts.delegator.app')
+@extends('layouts.admin.app')
 
 
 @section('page-header')
     <section class="content-header">
         <h1>
-            Companies
-            <small>company datatable</small>
+            Policy Add-Ons
+            <small>add-ons datatable</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Companies</li>
-            <li class="active">Company List</li>
+            <li class="active">Add-Ons</li>
+            <li class="active">Add-Ons List</li>
         </ol>
     </section>
 @endsection
@@ -37,7 +37,7 @@
             @endif
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Comapny List</h3>
+                    <h3 class="box-title">Add-Ons List</h3>
                     <div class="pull-right">
                         <div class="btn-group">
                             <button type="button" class="btn  btn-success"><i class="fa fa-print"></i>&nbsp;&nbsp;&nbsp;Export as</button>
@@ -61,28 +61,32 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Logo</th>
-                            <th>Name</th>
-                            <th>Address</th>
+                            <th>Add-On Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Policies</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($companies as $company)
+                        @foreach ($addons as $addon)
+
                             <tr>
-                                <td>{{$company->id}}</td>
+                                <td>{{$addon->id}}</td>
+                                <td>{{$addon->name}}</td>
+                                <td>{{$addon->description}}</td>
+                                <td>{{$addon->price}}</td>
                                 <td>
-                                    <img src="{{asset('comp_logos/'.$company->comp_logo)}}" style="height: 100px;width: 100px">
+                                    @foreach ($addon->Policies as $policy)
+                                    {{$policy->topic}}
+                                    @endforeach
                                 </td>
-                                <td>{{$company->comp_name}}</td>
-                                <td>{{$company->comp_address}}</td>
-
                                 <td>
-                                    <form action="{{ route('companies.destroy',$company->id) }}" method="POST" id="formfields">
+                                    <form action="{{ route('companies.destroy',$addon->id) }}" method="POST" id="formfields">
 
-                                        <a class="btn btn-xs btn-info " href="{{ route('companies.show',$company->id) }}">Show</a>
+                                        <a class="btn btn-xs btn-info " href="{{ route('companies.show',$addon->id) }}">Show</a>
 
-                                        <a class="btn btn-xs btn-primary" href="{{ route('companies.edit',$company->id) }}">Edit</a>
+                                        <a class="btn btn-xs btn-primary" href="{{ route('companies.edit',$addon->id) }}">Edit</a>
 
                                         @csrf
                                         @method('DELETE')
@@ -93,24 +97,25 @@
                                                 data-toggle="modal"
                                                 data-target="#vendorDeleteConfirmationModal"
 
-                                                data-id="{{$company['id']}}"
+                                                data-id="{{$addon['id']}}"
 
 
                                         >Delete</button>
                                     </form>
                                 </td>
                             </tr>
+
                         @endforeach
 
                         </tbody>
                         <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Code</th>
-                            <th>Address</th>
+                            <th>Add-On Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Policies</th>
                             <th>Action</th>
-
                         </tr>
                         </tfoot>
                     </table>

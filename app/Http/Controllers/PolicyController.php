@@ -4,9 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Policy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PolicyController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +26,9 @@ class PolicyController extends Controller
      */
     public function index()
     {
-        //
+        $policies = Policy::with('Addons')->get();
+
+        return view('admin.policies.index',compact('policies'));
     }
 
     /**
@@ -24,7 +38,11 @@ class PolicyController extends Controller
      */
     public function create()
     {
-        //
+        $id = DB::table('policies')->max('id');
+
+        $id += 1;
+
+        return view('admin.policies.create', compact('id'));
     }
 
     /**
@@ -35,7 +53,16 @@ class PolicyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'topic' => 'required|unique:policies',
+            'content' => 'required|string',
+            'price' => 'required',
+        ]);
+
+        Policy::create($request->all());
+
+        return redirect()->route('policies.index')
+            ->with('success','Policy added successfully.');
     }
 
     /**

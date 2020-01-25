@@ -18,7 +18,7 @@ class CreatePoliciesTable extends Migration
             $table->string('topic');
             $table->text('content');
             $table->float('price');
-            $table->bigInteger('addons');
+            $table->bigInteger('addons')->nullable();
             $table->timestamps();
         });
     }

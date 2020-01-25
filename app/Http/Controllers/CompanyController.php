@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\DB;
 class CompanyController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -17,7 +27,7 @@ class CompanyController extends Controller
     {
         $companies = Company::with('Policies')->get();
 
-        return view('delegator.companies.index', compact('companies'));
+        return view('admin.companies.index', compact('companies'));
     }
 
     /**
@@ -31,7 +41,7 @@ class CompanyController extends Controller
 
         $id += 1;
 
-        return view('delegator.companies.create', compact('id'));
+        return view('admin.companies.create', compact('id'));
     }
 
     /**

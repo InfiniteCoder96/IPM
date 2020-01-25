@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Policy_Addon extends Model
 {
+    protected $table = 'policy_addons';
+
     protected $fillable = [
-        'name', 'price'
+        'name', 'description', 'price'
     ];
 
     public function Policies(){
-        return $this->hasMany(Policy_Addon::class,'addons','id');
+        return $this->hasMany(Policy::class,'addons','id');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.delegator.app')
+@extends('layouts.admin.app')
 
 
 @section('page-header')
@@ -42,7 +42,7 @@
                         <a class="btn btn-flat btn-danger disabled" >Company ID: {{$id}}</a>
                     </div>
                 </div>
-                <form role="form" action="{{ route('companies.store') }}" method="POST" enctype="multipart/form-data" id="accident_create_form">
+                <form role="form" action="{{ route('companies.store') }}" method="POST" enctype="multipart/form-data" id="accident_create_form" autocomplete="off">
                     @csrf
                     <div class="box-body">
                         <div class="box-body">
@@ -50,7 +50,7 @@
                                 <div class="col-xs-6 col-md-6">
                                     <div class="form-group">
                                         <label>Company Name</label>
-                                        <input type="text" name="comp_name" id="comp_name" class="form-control" placeholder="Company name">
+                                        <input type="text" name="comp_name" id="comp_name" class="form-control" placeholder="Company name" autocomplete="off">
                                         <span class="help-block hide">Help block with error</span>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                         <label>Company Address</label>
 
 
-                                        <textarea name="comp_address" class="form-control" ></textarea>
+                                        <textarea name="comp_address" class="form-control" autocomplete=off></textarea>
 
                                         <span class="help-block hide">Help block with error</span>
                                     </div>
@@ -158,8 +158,8 @@
 
             $('.select23').select2();
 
-
         });
+
         fetchPolicies();
         function fetchPolicies() {
             $.ajax({

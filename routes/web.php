@@ -23,6 +23,9 @@ Route::get('/admin', 'HomeController@admin')->name('admin');
 
 Route::get('policies/fetch_policies', 'PolicyController@fetch_policies')->name('policies.fetch_policies');
 
+Route::get('policy_addons/fetch_addons', 'PolicyAddonController@fetch_addons')->name('policy_addons.fetch_addons');
+
+
 Route::resource('companies', 'CompanyController');
 Route::resource('policies', 'PolicyController');
 Route::resource('policy_addons', 'PolicyAddonController');
