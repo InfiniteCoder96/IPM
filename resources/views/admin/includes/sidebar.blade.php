@@ -35,7 +35,7 @@
                 </marquee>
             </li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{url('home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li class="active"><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li class="header">Primary Data</li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-money"></i> <span>Policies</span>
